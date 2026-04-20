@@ -32,6 +32,13 @@ Then deploy from GitHub Desktop with this flow:
 After the first successful workflow run, your site URL is usually:
 - `https://<your-username>.github.io/<repo-name>/`
 
+If your repository is named `visen-main1`, the URL becomes:
+- `https://<your-username>.github.io/visen-main1/`
+
+If that URL still shows a 404, check **Settings** → **Pages** and make sure:
+- Source is set to **GitHub Actions**
+- No custom domain is configured unless you really want to use `visen.in`
+
 ### **Fix EmailJS Domain Whitelisting**
 The most common issue is that your deployed domain is not whitelisted in EmailJS.
 
@@ -52,6 +59,11 @@ The most common issue is that your deployed domain is not whitelisted in EmailJS
 6. Verify the template has:
    - Correct "To Email" address
    - Template variables: `{{user_name}}`, `{{user_email}}`, `{{message}}`
+
+If your template uses different names, map any of these supported keys instead:
+- Name: `{{user_name}}`, `{{name}}`, `{{from_name}}`
+- Email: `{{user_email}}`, `{{email}}`, `{{from_email}}`, `{{reply_to}}`
+- Message: `{{message}}`, `{{user_message}}`
 
 ### **Test After Deployment**
 1. Deploy your changes

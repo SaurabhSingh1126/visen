@@ -1,5 +1,5 @@
 {
-  "name": "visen",
+  "name": "visen-main1",
   "private": true,
   "scripts": {
     "build": "node scripts/generate-env.js && echo \"ready\""

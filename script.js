@@ -64,12 +64,17 @@ if (!formEl || !statusEl) {
     const userEmail = (formData.get('user_email') || '').toString();
     const message = (formData.get('message') || '').toString();
 
+    // Include common aliases because EmailJS templates often use different variable names.
     const templateParams = {
       user_name: userName,
       user_email: userEmail,
       message,
+      name: userName,
+      email: userEmail,
       from_name: userName,
+      from_email: userEmail,
       reply_to: userEmail,
+      user_message: message,
       to_email: EMAILJS_TO_EMAIL || '',
       to: EMAILJS_TO_EMAIL || '',
       recipient_email: EMAILJS_TO_EMAIL || ''
